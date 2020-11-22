@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import MarkdownReader from "../components/MarkdownEditor/MarkdownReader";
 
@@ -7,6 +7,10 @@ import { Context } from "../context/context";
 const DetailBlog = props => {
   const id = props.match.params.id;
   const context = useContext(Context);
+
+  useEffect(() => {
+    document.title = `Detail - id:${id}`;
+  }, []);
 
   return (
     <DetailBlogComponent>

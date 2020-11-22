@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../context/context";
 
 import { Link } from "react-router-dom";
@@ -11,7 +11,10 @@ const Home = () => {
   const context = useContext(Context);
 
   const { blog } = context;
-  console.log(context);
+
+  useEffect(() => {
+    document.title = "Home Page";
+  }, []);
 
   const filterValue = value => {
     let newValue;
@@ -38,7 +41,7 @@ const Home = () => {
       </div>
       <div className="container-blog">
         {blog.all_blog.length === 0 ? (
-          <p>Theres nothing blog</p>
+          <p>Theres nothing on blog</p>
         ) : (
           blog.all_blog.map(data => {
             return (

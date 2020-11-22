@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../context/context";
 import { v4 as uuidv4 } from "uuid";
 
@@ -13,6 +13,10 @@ const CreateBlog = props => {
   const [content, setContent] = useState("");
 
   const context = useContext(Context);
+
+  useEffect(() => {
+    document.title = "Create Blog Page";
+  }, []);
 
   const changeImage = e => {
     if (e.target.files[0]) {
@@ -37,8 +41,6 @@ const CreateBlog = props => {
       props.history.push("/");
     }
   };
-
-  console.log(context.blog);
 
   return (
     <CreateBlogComponent>
