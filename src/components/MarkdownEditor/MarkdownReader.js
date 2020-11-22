@@ -45,6 +45,14 @@ const MarkDownComponent = styled.div`
     padding-bottom: 5px;
     margin-bottom: 8px;
   }
+  blockquote {
+    border-left: 10px solid #ffd369;
+    padding: 8px;
+    background: #222831;
+    color: #eee;
+    margin: 8px 0;
+  }
+
   .header {
     margin-bottom: 10px;
   }

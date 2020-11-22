@@ -43,9 +43,11 @@ const CreateBlog = props => {
   return (
     <CreateBlogComponent>
       <div className="blog-editor">
-        <button onClick={() => props.history.goBack()}>Back To Home</button>
+        <button className="back-btn" onClick={() => props.history.goBack()}>
+          Back To Home
+        </button>
         <div className="header">
-          <h2>Create Editor</h2>
+          <h2>Create Blog</h2>
         </div>
         <div className="input-top">
           <div className="input-image">
@@ -112,6 +114,16 @@ const CreateBlogComponent = styled.div`
   }
   .blog-reader {
     flex: 1;
+  }
+  .back-btn {
+    padding: 10px;
+    background: #393e46;
+    border: transparent;
+    outline: none;
+    color: #ffd369;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 10px;
   }
 
   .input-top {
